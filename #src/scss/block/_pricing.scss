@@ -1,0 +1,166 @@
+.pricing {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+	.pricing__header {
+		flex-direction: column;
+		padding-top: 228px;
+		text-align: center;
+		h2 {
+			color: $header;
+			font-size: 32px;
+			line-height: 32px;
+			font-weight: 700;
+		}
+		p {
+			display: inline-block;
+			width: 80%;
+			font-size: 20px;
+			line-height: 24px;
+			padding-top: 15px;
+		}
+	}
+	.pricing__icons {
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: 77px;
+		width: 83%;
+		.pricing__element {
+			flex-basis: 33%;
+			text-align: center;
+			.free {
+				background-color: #ebebeb;
+				color: $header; 
+			}
+			.black {
+				background-color: $header;
+				color: $white;
+			}
+			p.icon {
+				width: 100px;
+        		height: 100px;
+        		border: 0px solid $black;
+				border-radius: 50%;
+				position: relative;
+				margin: 0 auto;
+				i {
+					font-size: 48px;
+					line-height: 24px;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+			h3 {
+				padding: 24px 0 14px 0;
+				font-size: 24px;
+				line-height: 24px;
+				font-weight: 700;
+				color: $header;
+				
+			}
+			p {
+				font-size: 14px;
+				line-height: 24px;
+				font-weight: 400;
+				width: 70%;
+				margin: 0 auto;
+			}
+			.price {
+				font-size: 32px;
+				line-height: 24px;
+				font-weight: 700;
+				padding: 41px 0 14px 0;
+				color: $header;
+				position: relative;
+				&::after {
+					content: "";
+  					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 50px;
+					height: 2px;
+					background-color: $header;
+					right: 0;
+					margin: 0 auto;
+					display: block;
+				}
+			}
+			span {
+				color: $gray;
+				font-size: 16px;
+				line-height: 48px;
+				width: 100%;
+				
+			}
+			.btn {
+				$values: (fs: 16px, lh:24px, ls: 0, w: 138px, pd: 10px 0, br: 0, bg: transparent, clr: $header);
+				@include btn($values...) {
+					border: 2px solid $header;
+					margin: 12px auto;
+					&:hover {
+						border: 1px solid $header;
+						background-color: transparent;
+					 }
+				};
+			}
+		}
+	}  	
+}
+
+@media (max-width: 768px) {
+	.pricing {
+		.pricing__header {
+			h2 {
+				font-size: 28px;
+			}
+			p {
+				font-size: 18px;
+			}
+		}
+		.pricing__icons {
+			width: 100%;
+			.pricing__element {
+				p {
+					width: 95%;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.pricing {
+		border-top: 1px solid $gray;
+		.pricing__header {
+			padding-top: 100px;
+			h2 {
+				font-size: 20px;
+			}
+		}
+		.pricing__icons {
+			width: 100%;
+			.pricing__element {
+				flex-basis: 100%;
+				padding: 10px 0 50px 0;
+				border-bottom: 1px dashed $gray;
+				h3 {
+					padding: 10px 0 10px 0;
+				}
+				p {
+					width: 95%;
+				}
+				.price {
+					padding-top: 20px;
+				}
+				.btn {
+					margin: 20px auto;
+				}
+			}
+		}
+	}
+}

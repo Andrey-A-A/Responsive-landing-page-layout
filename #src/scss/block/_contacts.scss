@@ -1,0 +1,197 @@
+.contacts {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+	flex-direction: column;
+	
+	.contacts__header {
+		flex-direction: column;
+		padding-top: 211px;
+		text-align: center;
+		h2 {
+			font-size: 32px;
+			line-height: 32px;
+			letter-spacing: 0px;
+		}
+		p {
+			font-size: 20px;
+			line-height: 24px;
+			width: 78%;
+			margin: 0 auto;
+			padding-top: 14px;
+		}
+	}
+	.contacts__block {
+		display: flex;
+		flex-wrap: wrap;
+		padding-top: 10px;
+		width: 78%;
+		justify-content: center;
+		
+		.contacts__element {
+			flex-basis: 32%;
+			text-align: center;
+			padding-top: 40px;
+			justify-content: space-around;
+			padding-right: 10px;
+			box-sizing: border-box;
+				&:last-of-type {
+					padding-right: 0;
+				}
+			i {
+				font-size: 22px;
+				line-height: 24px;
+				color: $header;
+			}
+			h3 {
+				padding-top: 17px;
+				font-size: 24px;
+				line-height: 24px;
+			}
+			p {
+				font-size: 14px;
+				line-height: 16px;
+				width: 75%;
+				margin: 0 auto;
+				a {
+					color: $gray;
+					text-decoration: none;
+					font-family: "SourceSansPro", cursive;
+					font-size: 14px;
+					font-weight: 400;
+					line-height: 16px;
+					&:hover {
+						text-decoration: underline;
+					 }
+					&:active {
+						color: $gray;
+					}
+					&:visited {
+						color: $gray;
+					}
+				}
+			}
+		}
+		
+	}
+	.forma {
+		padding-top: 44px;
+		width: 50%;
+		margin: 0 auto;
+		form {
+			width: 100%;
+  			height: 30px;
+			position: relative;
+			padding-bottom: 483px;
+			p { padding-bottom: 24px; }
+			input, textarea{
+				width: 100%;
+				height: 100%;
+				border: 2px solid $black;
+				font-size: 16px;
+				line-height: 20px;
+				color: $gray;
+			}
+			#email, #name {
+				padding: 16px 0 16px 10px;
+				&:hover {
+					border: 1px solid $black;
+					padding: 17px 0 17px 10px;
+				}
+			}
+			textarea {
+				padding: 16px 0 4px 10px;
+				font-family: "SourceSansPro", cursive;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 20px;
+				&:hover {
+					border: 1px solid $black;
+					padding: 17px 0 5px 10px;
+				}
+			}
+			p {
+				.btn {
+					$values: (fs: 16px, lh:24px, ls: 0, w: 170px, br: 0, bg: $black, clr: $white);
+					@include btn($values...) {
+						border: 0px;
+						margin: 0 auto;
+						&:hover {
+							background-color: #717171;
+						}
+					};
+				}
+			}
+			
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.contacts {
+		.contacts__header {
+			h2 {
+				font-size: 28px;
+			}
+			p {
+				font-size: 18px;
+				width: 90%;
+			}
+		}
+		.contacts__block {
+			width: 100%;
+			margin: 0 auto;
+			.contacts__element {
+				flex-basis: 30%;
+				justify-content: space-between;
+				h3 {
+					font-size: 20px;
+					line-height: 20px;
+				}
+				p {
+					font-size: 14px;
+					line-height: 16px;
+					width: 90%;
+				}
+			}
+		}
+		.forma {
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.contacts {
+		.contacts__header {
+			h2 {
+				font-size: 24px;
+			}
+			p {
+				font-size: 16px;
+			}
+		}
+		.contacts__block {
+			width: 100%;
+			margin: 0 auto;
+			.contacts__element {
+				flex-basis: 95%;
+				
+				h3 {
+					font-size: 18px;
+					line-height: 18px;
+				}
+				p {
+					font-size: 14px;
+					line-height: 16px;
+				}
+			}
+		}
+		.forma {
+			width: 90%;
+		}
+	}
+}

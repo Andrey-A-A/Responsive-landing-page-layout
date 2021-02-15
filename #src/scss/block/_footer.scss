@@ -1,0 +1,227 @@
+.footer {
+	@include min-max(320px, 100%, 0);
+	background-color: $header;
+	.footer__header {
+		display: flex;
+		flex-direction: column;
+		padding-top: 95px;
+		box-sizing: border-box;
+		margin: 0 auto;
+		text-align: center;
+		h2 {
+			font-size: 32px;
+			line-height: 32px;
+			color: $white;
+			letter-spacing: 0px;
+			padding-bottom: 14px;
+		}
+		p {
+			font-size: 20px;
+			line-height: 24px;
+			width: 78%;
+			margin: 0 auto;
+			
+		}
+		
+	}
+	.footer__forma {
+		display:flex;
+		padding-top: 44px;
+		width: 100%;
+		//height: 150px;
+		justify-content: center;
+		margin: 0 auto;
+		position: relative;
+		form {
+			display:flex;
+			width: 78%;
+			justify-content: space-between;
+			align-content: space-between;		
+			.enter {
+				flex-basis: 78%;
+				box-sizing: border-box;
+					padding: 0 0 0 25px;
+					height: 100%;
+					border: 0;
+					font-size: 16px;
+					line-height: 20px;
+				
+			}
+			.btn {
+				flex-basis: 19%;
+				$values: (fs: 16px, lh:24px, ls: 0, w: 130px, br: 0, bg: $white, clr: $black);
+					@include btn($values...) {
+					border: 0px;
+					margin: 0 auto;
+					&:hover {
+						background-color: #717171;
+					}
+				/*input {
+					
+				};*/
+				}
+			}
+		}
+		
+	}
+	.line {
+		width: 100%;
+		height: 1px;
+		background-color: #959595;
+		margin: 53px auto;
+	}
+	.footer__link {
+		display: flex;
+		.footer__link-address {
+			display: flex;
+			flex-direction: column;
+			flex-basis: 35%;
+			p {
+				color: $white;
+			}
+			color: $white;
+			a {
+				color: $white;
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 20px;
+				padding-top: 5px;
+				&:active {
+					color: $gray;
+				}
+				&:visited {
+					color: $white;
+				}
+			}
+		}
+		.footer__link-references {
+			display: flex;
+			flex-wrap: wrap;
+			flex-basis: 66%;
+			padding-bottom: 300px;
+			.links {
+				display: flex;
+				flex-direction: column;
+				flex-basis: 25%;
+				a {
+					color: $white;
+					text-decoration: none;
+					font-family: "SourceSansPro", cursive;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 20px;
+					&:hover {
+						text-decoration: underline;
+					 }
+					&:active {
+						color: $gray;
+					}
+					&:visited {
+						color: $white;
+					}
+				}
+				
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		.footer__header {
+			h2 {
+				font-size: 28px;
+			}
+			p {
+				font-size: 18px;
+				width: 90%;
+			}
+		}
+		.footer__forma {
+			form {
+				width: 90%;
+				.btn {
+					font-size: 16px;
+					line-height: 18px;
+				}
+			}
+		}
+		.footer__link {
+			justify-content: center;
+			
+			.footer__link-address {
+				padding-left: 10px;
+				flex-basis: 60%;
+				p {
+					font-size: 14px;
+					line-height: 18px;
+				}
+				a {
+					font-size: 14px;
+					line-height: 18px;
+				}
+			}
+			.footer__link-references {
+				padding-left: 10px;
+				.links {
+					flex-basis: 45%;
+					padding: 0 0 10px 10px;
+					a {
+						font-size: 14px;
+						line-height: 18px;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.footer {
+		.footer__header {
+			h2 {
+				font-size: 24px;
+			}
+			p {
+				font-size: 16px;
+				width: 100%;
+			}
+		}
+		.footer__forma {
+			form {
+				width: 100%;
+				.enter {
+					flex-basis: 75%;
+				}
+				.btn {
+					flex-basis: 22%;
+					font-size: 14px;
+					line-height: 16px;
+				}
+			}
+		}
+		.footer__link {
+			//justify-content: center;
+			flex-wrap: wrap;
+			.footer__link-address {
+				flex-basis: 100%;
+				padding: 0 0 30px 20px;
+				
+			}
+			.footer__link-references {
+				order: -1;
+				flex-basis: 100%;
+				padding: 0 0 30px 0;
+				justify-content: space-between;
+				.links {
+					flex-basis: 15%;
+					//align-items: flex-end;
+					//margin: 0 auto;
+					padding-left: 20px;
+				}
+			}
+			
+		}
+	}
+}

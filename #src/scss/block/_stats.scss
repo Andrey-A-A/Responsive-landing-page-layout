@@ -1,0 +1,145 @@
+.stats {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+	.stats__header {
+		flex-direction: column;
+		padding-top: 120px;
+		text-align: center;
+		h2 {
+			font-size: 32px;
+			line-height: 32px;
+			letter-spacing: 2px;
+		}
+		p {
+			font-size: 20px;
+			line-height: 24px;
+			width: 78%;
+			margin: 0 auto;
+			padding-top: 14px;
+		}
+	}
+	.stats__block {
+		display: flex;
+		padding-top: 64px;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 68%;
+		.stats__element {
+			flex-direction: column;
+			justify-content: space-between;
+			flex-basis: 25%;
+			text-align: center;
+			i {
+				font-size: 44px;
+				line-height: 24px;
+				color: #2d2d2d; 
+			}
+			h3 {
+				font-size: 24px;
+				line-height: 24px;
+				padding-top: 19px;
+			}
+			p {
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+	}
+	.stats__bottom {
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		margin: 0 auto;
+		flex-direction: column;
+		padding-top: 77px;
+		.foto {
+			margin: 0 auto;
+			background-color: $gray;
+			width: 104px;
+			height: 104px;
+			border: 0 solid $gray;
+			border-radius: 50%;
+		}
+		h4 {
+			font-size: 22px;
+			line-height: 24px;
+			font-weight: 400;
+			color: $header;
+			padding: 10px 0 5px 0;
+		}
+		.quote {
+			display: flex;
+			width: 63%;
+			padding-top: 25px;
+			text-align: center;
+			justify-content: space-between;
+			font-size: 19px;
+			line-height: 24px;
+			color: $gray;
+			
+			i {
+				&:first-of-type {
+					margin-right: 10px;
+				}
+				&:last-of-type {
+					margin-left: 10px;
+					align-self: flex-end;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.stats {
+		.stats__header {
+			h2 {
+				font-size: 28px;
+			}
+			p {
+				font-size: 18px;
+				width: 90%;
+			}
+		}
+		.stats__block {
+			width: 100%;
+			}
+		.stats__bottom {
+			.quote {
+				width: 85%;
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.stats {
+		.stats__header {
+			h2 {
+				font-size: 24px;
+			}
+			p {
+				font-size: 16px;
+			}
+		}
+		.stats__block {
+			.stats__element{
+				flex-basis: 50%;
+				justify-content: space-around;
+				padding-bottom: 30px;
+			}
+			}
+		.stats__bottom {
+			padding-top: 47px;
+			.quote {
+				width: 95%;
+				
+			}
+		}
+	}
+}

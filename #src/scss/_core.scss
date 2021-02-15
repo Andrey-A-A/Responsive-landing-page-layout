@@ -1,0 +1,17 @@
+// Base Class Definition - базовые классы для шрифта иконок fontawesome-free-5.15.1-web
+// -------------------------
+
+.#{$fa-css-prefix},
+.fas,
+.far,
+.fal,
+.fad,
+.fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}

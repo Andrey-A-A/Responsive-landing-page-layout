@@ -1,0 +1,31 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+} //этот миксин будет подключать наши файлы шрифтов
+
+body.lock {
+	overflow: hidden; /*контент не перемещается при скролле меню, то есть когда меню открыто контент не смещается.*/
+}
+@import "fonts"; //подключаем файл стилей шрифтов
+@import "reset";
+@import "fontawesome.scss";
+@import "solid.scss";
+@import "regular";
+@import "brands.scss";
+@import "base-style";
+@import "block/top";
+@import "block/features";
+@import "block/pricing";
+@import "block/works";
+@import "block/team";
+@import "block/stats";
+@import "block/contacts";
+@import "block/footer";
+
+
+

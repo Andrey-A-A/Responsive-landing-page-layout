@@ -1,0 +1,134 @@
+.works {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	align-items: center;
+	box-sizing: border-box;
+	margin: 0 auto;
+	.works__header {
+		flex-direction: column;
+		padding-top: 179px;
+		text-align: center;
+		h2 {
+			color: $header;
+			font-size: 32px;
+			line-height: 32px;
+			font-weight: 700;
+		}
+		p {
+			display: inline-block;
+			width: 80%;
+			font-size: 20px;
+			line-height: 24px;
+			padding-top: 15px;
+		}
+	}
+	.works__modules {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		padding-top: 53px;
+		.works__element {
+			padding: 15px 3px 49px 3px;
+			text-align: center;
+			h3 {
+				padding: 17px 0 5px 0;
+				font-size: 22px;
+				line-height: 24px;
+				font-weight: 700;
+				color: $header;
+			}
+			.module-1 {
+				background: #222222;
+			}
+			.module-2 {
+				background: url(../img/works2.png)  $gray;
+			}
+			.module-3 {
+				background: url(../img/works3.png)  $gray;
+			}
+			.module-4 {
+				background: url(../img/works4.png)  $gray;
+			}
+			.module-5 {
+				background: url(../img/works5.png)  $gray;
+			}
+			.module-6 {
+				background: url(../img/works6.png)  $gray;
+			}
+			.module-7 {
+				background: url(../img/works7.png)  $gray;
+			}
+			.module-8 {
+				background: url(../img/works8.png)  $gray;
+			}
+			.module {
+				width: 220px;
+				height: 220px;
+				position: relative;
+				.circle {
+					width: 48px;
+					height: 48px;
+					border: 1px solid $white;
+					border-radius: 50%;
+					background-color: $white;
+					position: absolute;
+         		left: 50%;
+          		top: 50%;
+					transform: translate(-50%, -50%);
+					text-align: center;
+					span {
+						color: #222222;
+						font-size: 22px;
+						font-weight: 700;
+						display: block;
+						padding-top: 14px;
+					}
+				}
+				.eye {
+					position: absolute;
+					top: 190px;
+					left: 11px;
+					font-size: 14px;
+					line-height: 18px;
+					color: $white;
+					i {
+						position: relative;
+						font-size: 22px;
+						line-height: 18px;
+						top: 5px;
+						padding-right: 4px;
+					}
+				}
+				.clock {
+					position: absolute;
+					top: 190px;
+					left: 130px;
+					color: $white;
+					font-size: 14px;
+					line-height: 18px;
+					i {
+						position: relative;
+						font-size: 22px;
+						line-height: 18px;
+						top: 3px;
+						padding-left: 4px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.works__header {
+		h2 {
+			font-size: 28px;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+}
+

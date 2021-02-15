@@ -1,0 +1,87 @@
+@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@mixin btn($bg: $black, $fs: 9px, $lh: 13px, $ls: 0.54px, $fw: 700, $br: 40px, $w: 114px, $pd:13px 0, $clr: $white) {
+  width: $w;
+  //height: $h;
+  color: $clr;
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  font-weight: $fw;
+  background-color: $bg;
+  border-radius: $br;
+  padding: $pd;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 25px 0;
+  text-decoration: none;
+  @content; //в этом месте мы сможем подключать дополнительные стили
+
+  //&:hover {
+    //background-color: lighten($bg, 15%);
+    //
+  //}
+}
+
+// Mixins для шрифта иконок fontawesome-free-5.15.1-web
+// --------------------------
+
+@mixin fa-icon {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+}
+
+@mixin fa-icon-rotate($degrees, $rotation) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
+  transform: rotate($degrees);
+}
+
+@mixin fa-icon-flip($horiz, $vert, $rotation) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation}, mirror=1)";
+  transform: scale($horiz, $vert);
+}
+
+// Отображение контента только для программ чтения с экрана. А-ля Бутстрап 4.
+//
+// Смотри: http://a11yproject.com/posts/how-to-hide-content/
+
+@mixin sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+// Используйте в сочетании с .sr-only только для отображения контента, когда он сфокусирован.
+//
+// Полезно для ссылок "перейти к основному контенту"; см. http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+//
+// Credit: HTML5 Boilerplate
+
+@mixin sr-only-focusable {
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}

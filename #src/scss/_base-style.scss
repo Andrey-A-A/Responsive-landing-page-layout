@@ -1,0 +1,37 @@
+/**
+ * Основные стили
+ **/
+
+ body {
+	font-family: "SourceSansPro", cursive;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+	background-color: #ffffff;
+ }
+ 
+ .container {
+	@include min-max(320px, 100%, 0);
+ }
+ 
+ .wrap {
+	@include min-max(320px, 960px, 10px);
+ }
+ 
+h2, h3 {
+	color: $header;
+	font-weight: 700;
+}
+
+p {
+	color: $gray;
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+	font-family: "SourceSansPro", cursive;
+	&:hover {
+		text-decoration: underline;
+	}
+}
