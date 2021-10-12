@@ -15,7 +15,7 @@
  }
  
  .wrap {
-	@include min-max(320px, 960px, 10px);
+	@include min-max(320px, 960px, 0px);
  }
  
 h2, h3 {

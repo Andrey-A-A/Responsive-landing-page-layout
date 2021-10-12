@@ -6368,7 +6368,7 @@ body {
 .wrap {
   min-width: 320px;
   max-width: 960px;
-  padding: 0 10px;
+  padding: 0 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0 auto;
@@ -6419,8 +6419,7 @@ body.lock {
   align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 0 auto;
-  z-index: 50;
+  z-index: 2;
 }
 
 .top .top__wrap::before {
@@ -6437,7 +6436,6 @@ body.lock {
 .top .top__wrap .top__body {
   /*вытащим наверх контентную часть шапки*/
   position: relative;
-  /*z-index: 2;    убираем этот z-index, он нужен был вначале для наглядности*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6536,20 +6534,18 @@ body.lock {
 
 .top .top__wrap .top__body .top__menu {
   position: fixed;
-  /*margin: auto;
-				left: 0;*/
   top: -100%;
   /*делаем изначально меню невидимым, скрываем его наверху*/
   width: 100%;
-  height: 30%;
+  height: 38%;
   overflow: auto;
   /*если меню не помечается, то добавим возможность его прокрутки*/
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
   /*добавляем плавности*/
-  background-color: #fcdb00;
-  padding: 80px 0 0 0;
+  padding-top: 80px;
+  z-index: 2;
 }
 
 .top .top__wrap .top__body .top__menu .top__list {
@@ -6557,30 +6553,58 @@ body.lock {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  z-index: 3;
+  /*justify-content: space-between;*/
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f9e45b;
+  z-index: 2;
 }
 
 .top .top__wrap .top__body .top__menu .top__list li {
   list-style: none;
-  margin: 10px 20px 0 20px;
+  padding: 10px 0px;
+  /*margin: 10px 20px;*/
+  /*background-color: #f7e04c;*/
+  border: 1px solid #f9e45b;
+  width: 90px;
+  text-align: center;
+  z-index: 2;
 }
 
 .top .top__wrap .top__body .top__menu .top__list li .top__link {
   color: #222222;
-  text-transform: uppercase;
-  font-size: 22px;
+  /*text-transform: uppercase;*/
+  font-size: 18px;
   text-decoration: none;
+  padding: 5px;
 }
 
 .top .top__wrap .top__body .top__menu .top__list li .top__link:hover {
-  color: #717171;
+  /*color: #717171;*/
+  text-decoration: underline;
 }
 
 .top .top__wrap .top__body .top__menu.active {
   top: 0;
+}
+
+.top .top__wrap .top__body .top__body-overlay {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.top .top__wrap .top__body .top__body-overlay.active {
+  left: 0;
+  opacity: 1;
 }
 
 .top .top__content {
@@ -6599,6 +6623,7 @@ body.lock {
           align-items: center;
   text-align: center;
   padding-top: 266px;
+  z-index: 1;
 }
 
 .top .top__content h1 {
@@ -6972,68 +6997,75 @@ body.lock {
   color: #010101;
 }
 
-.works .works__modules .works__element .module-1 {
-  background: #222222;
-}
-
-.works .works__modules .works__element .module-2 {
-  background: url(../img/works2.png) #898989;
-}
-
-.works .works__modules .works__element .module-3 {
-  background: url(../img/works3.png) #898989;
-}
-
-.works .works__modules .works__element .module-4 {
-  background: url(../img/works4.png) #898989;
-}
-
-.works .works__modules .works__element .module-5 {
-  background: url(../img/works5.png) #898989;
-}
-
-.works .works__modules .works__element .module-6 {
-  background: url(../img/works6.png) #898989;
-}
-
-.works .works__modules .works__element .module-7 {
-  background: url(../img/works7.png) #898989;
-}
-
-.works .works__modules .works__element .module-8 {
-  background: url(../img/works8.png) #898989;
-}
-
 .works .works__modules .works__element .module {
   width: 220px;
   height: 220px;
   position: relative;
 }
 
-.works .works__modules .works__element .module .circle {
+.works .works__modules .works__element .module .colp-pict {
+  width: 100%;
+  height: 76%;
+  display: block;
+  position: relative;
+}
+
+.works .works__modules .works__element .module .colp-pictimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 220px;
+}
+
+.works .works__modules .works__element .module .colp-pict::before,
+.works .works__modules .works__element .module .colp-pict:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.works .works__modules .works__element .module .colp-pict::before {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+}
+
+.works .works__modules .works__element .module .colp-pict:hover::after {
+  content: '+';
   width: 48px;
-  height: 48px;
-  border: 1px solid #fff;
+  height: 35px;
+  border: 0px solid #fff;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
-  left: 50%;
   top: 50%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  padding-top: 12px;
   text-align: center;
-}
-
-.works .works__modules .works__element .module .circle span {
+  font-weight: 700;
   color: #222222;
   font-size: 22px;
   font-weight: 700;
-  display: block;
-  padding-top: 14px;
 }
 
-.works .works__modules .works__element .module .eye {
+.works .works__modules .works__element .module .colp-pict:hover::before,
+.works .works__modules .works__element .module .colp-pict:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.works .works__modules .works__element .module .colp-pict .eye {
   position: absolute;
   top: 190px;
   left: 11px;
@@ -7042,7 +7074,7 @@ body.lock {
   color: #fff;
 }
 
-.works .works__modules .works__element .module .eye i {
+.works .works__modules .works__element .module .colp-pict .eye i {
   position: relative;
   font-size: 22px;
   line-height: 18px;
@@ -7050,7 +7082,7 @@ body.lock {
   padding-right: 4px;
 }
 
-.works .works__modules .works__element .module .clock {
+.works .works__modules .works__element .module .colp-pict .clock {
   position: absolute;
   top: 190px;
   left: 130px;
@@ -7059,7 +7091,7 @@ body.lock {
   line-height: 18px;
 }
 
-.works .works__modules .works__element .module .clock i {
+.works .works__modules .works__element .module .colp-pict .clock i {
   position: relative;
   font-size: 22px;
   line-height: 18px;
@@ -7716,9 +7748,16 @@ body.lock {
     padding: 8px;
   }
 
+  .top .top__wrap .top__body .top__menu {
+    height: 52%;
+  }
+
   .top .top__wrap .top__body .top__menu .top__list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .top .top__content {
@@ -7909,6 +7948,10 @@ body.lock {
     padding-top: 20px;
   }
 
+  .top .top__wrap .top__body {
+    height: 90px;
+  }
+
   .top .top__wrap .top__body .top__left {
     -ms-flex-item-align: end;
         align-self: flex-end;
@@ -7933,8 +7976,18 @@ body.lock {
         align-self: flex-end;
   }
 
+  .top .top__wrap .top__body .top__menu {
+    padding-top: 109px;
+    height: 70%;
+  }
+
+  .top .top__wrap .top__body .top__menu .top__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
   .top .top__content {
-    padding-top: 56px;
+    padding-top: 90px;
   }
 
   .top .top__content h1 {
